@@ -6,7 +6,7 @@ Minifies JS &amp; CSS files using YUI COMPRESSOR written in Python
 Usage:
 Step 1: Replace yui-compressor path on LINE 81
 
-Usage python filename [options...]
+Usage python minify.py [options...]
 
 Options:
 
