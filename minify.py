@@ -1,3 +1,8 @@
+#!/usr/bin/env python
+
+# This class is used to minify JS and CSS files. 
+# @author Nitesh Morajkar
+
 import getopt, sys, string, re, os
 
 #{{ Prints Usage of this script
