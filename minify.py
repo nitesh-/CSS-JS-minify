@@ -24,7 +24,8 @@ class GetArguments:
     def GetArgs(self):
         try:
             self.options, remainder = getopt.getopt(self.args, 'f:o:h', ['fileStack=', 'outputDir=', 'help'])
-            #print self.options
+            if len(self.option) == 0:
+				Usage()
             return self.parseArgs()
         except getopt.GetoptError:
             Usage()
