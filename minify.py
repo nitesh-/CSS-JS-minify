@@ -24,8 +24,8 @@ class GetArguments:
     def GetArgs(self):
         try:
             self.options, remainder = getopt.getopt(self.args, 'f:o:h', ['fileStack=', 'outputDir=', 'help'])
-            if len(self.option) == 0:
-				Usage()
+	    if len(self.options) == 0:
+	    	Usage()
             return self.parseArgs()
         except getopt.GetoptError:
             Usage()
@@ -84,14 +84,15 @@ class Minify:
 	def __init__(self, filesList, outputDir):
 		self.filesList = filesList
 		self.outputDir = outputDir
-		self.yuiCompressorPath = "/home/yuicompressor-2.4.7.jar"
+		self.yuiCompressorPath = "C:/css-js-minifier/yuicompressor-2.4.7.jar"
 	
 	#{{ Compress JS and CSS files
 	def compress(self, fileName):
 		print "Minifying " + fileName + "...\n"
 		jsCssFlag = self.getJsCssFlag(fileName)
 		file = self.getFileName(fileName)
-		cmd = "java -jar \"" + self.yuiCompressorPath + "\" \"" + fileName + "\" --type \"" + jsCssFlag + "\" -o \"" + self.outputDir + "/" + file + "\""
+		opFile = re.sub("(/+)", "/", self.outputDir + "/" + file)
+		cmd = "java -jar \"" + self.yuiCompressorPath + "\" \"" + fileName + "\" --type \"" + jsCssFlag + "\" -o \"" + opFile + "\""
 		#print cmd + "\n"
 		#sys.exit()
 		op = os.popen(cmd)
@@ -110,7 +111,7 @@ class Minify:
 	#}}
 	
 	def getFileName(self, file):
-		startIndex = file.rfind("\\")
+		startIndex = file.rfind("/")
 		length = len(file)
 		if startIndex != -1:
 			return file[startIndex:length]
