@@ -4,7 +4,7 @@ CSS-JS-minify
 Minifies JS &amp; CSS files using YUI COMPRESSOR written in Python
 
 Usage:
-Step 1: Replace yui-compressor path on LINE 81
+Step 1: Replace yui-compressor path on LINE 87
 
 Usage python minify.py [options...]
 
