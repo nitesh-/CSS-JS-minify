@@ -7,11 +7,13 @@ import getopt, sys, string, re, os
 
 #{{ Prints Usage of this script
 def Usage():
-	print """Usage python filename [options...]
+	print """
+
+Usage python filename [options...]
 Options:
--f --fileStack : Js and css files(comma separated) with absolute path eg: /home/demo/st.js,/home/demo/ss.css
--o --outputDir : Output directory where files are to be stored
--h --help      : Display help contents\n"""
+-f\t--fileStack\tJs and css files(comma separated) with absolute path eg: /home/demo/st.js,/home/demo/ss.css
+-o\t--outputDir\tOutput directory where files are to be stored
+-h\t--help\t\tDisplay help contents\n"""
 	sys.exit(1)
 #}}	
 
